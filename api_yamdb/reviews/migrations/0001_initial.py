@@ -87,10 +87,10 @@ class Migration(migrations.Migration):
         ),
         migrations.AddConstraint(
             model_name='review',
-            constraint=models.CheckConstraint(check=models.Q(('score__gte', 1), ('score__lt', 11)), name='%(app_label)s_%(class)s_score_in_range_1_10'),
+            constraint=models.CheckConstraint(check=models.Q(('score__gte', 1), ('score__lt', 11)), name='s_score_in_range_1_10'),
         ),
         migrations.AddConstraint(
             model_name='review',
-            constraint=models.UniqueConstraint(fields=('title', 'author'), name='%(app_label)s_%(class)s_unique_title_author'),
+            constraint=models.UniqueConstraint(fields=('title', 'author'), name='s_unique_title_author'),
         ),
     ]
