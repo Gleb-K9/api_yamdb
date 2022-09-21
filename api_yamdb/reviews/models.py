@@ -112,12 +112,12 @@ class Review(models.Model):
     class Meta:
         constraints = (
             models.CheckConstraint(
-                name="%(app_label)s_%(class)s_score_in_range_1_10",
+                name="s_score_in_range_1_10",
                 check=models.Q(score__gte=1) & models.Q(score__lt=11),
             ),
             models.UniqueConstraint(
                 fields=('title', 'author'),
-                name='%(app_label)s_%(class)s_unique_title_author',
+                name='s_unique_title_author',
             ),
         )
         verbose_name = 'Review'
